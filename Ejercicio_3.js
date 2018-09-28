@@ -1,5 +1,4 @@
 let E3 = function(a) {
-    aux = [];
     i = 1;
     number = 0;
     bool = 0;
