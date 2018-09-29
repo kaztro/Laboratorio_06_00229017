@@ -1,43 +1,44 @@
-let E6 = function(s) {
-    r = '';
-    for (let x of s) {
-        switch(x) {
-            case 0:
-            r.push(x);
+let E6 = function(string) {
+    nString = '';
+    for (let x of string) {
+        switch (x) {
+            case '0':
+            nString += 'm';
             break;
-            case 1:
-            r.push(x);
+            case '1':
+            nString += 'u';
             break;
-            case 2:
-            r.push(x);
+            case '2':
+            nString += 'r';
             break;
-            case 3:
-            r.push(x);
+            case '3':
+            nString += 'c';
             break;
-            case 4:
-            r.push(x);
+            case '4':
+            nString += 'i';
             break;
-            case 5:
-            r.push(x);
+            case '5':
+            nString += 'e';
             break;
-            case 6:
-            r.push(x);
+            case '6':
+            nString += 'l';
             break;
-            case 7:
-            r.push(x);
+            case '7':
+            nString += 'a';
             break;
-            case 8:
-            r.push(x);
+            case '8':
+            nString += 'g';
             break;
-            case 9:
-            r.push(x);
+            case '9':
+            nString += 'o';
             break;
+            default:
+            console.log('Es probable que no hayas ingresado una cadena...');
         }
     }
-    aux = r.split('');
-    j = aux.reverse();
-    z = j.join('');
-    return z;
+    return nString;
 }
-
+//prueba 1
 console.log(E6('0123456789'));
+//prueba 2
+console.log(E6('2131243215432543252353523523'));
