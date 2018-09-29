@@ -42,6 +42,52 @@ let ingresarP = function() {
 let buscar = function() {
     n = prompt('Ingresa el nombre a buscar: ');
     a = prompt('Ingresa el apellido a buscar: ');
+    for (let obj of personasR) {
+        if (obj.Nombre == n && obj.Apellido == a) console.log(obj);
+        else { console.log('No se encontro esa persona'); } 
+    }
+    validarMenu();
+}
+//-------------------------------------------------------------------------------------
+//----------------------------ModificarPer-------------------------------------------------
+let modificar = function() {
+    n = prompt('Ingresa el nombre a modificar: ');
+    a = prompt('Ingresa el apellido a modificar: ');
+    for (let i = 0; i < personasR.length; i++) {
+        if (personasR[i].Nombre == n && personasR[i].Apellido == a) sustituir(i);
+        else { console.log('No se encontro esa persona'); } 
+    }
+}
+
+let sustituir = function(indice) {
+    personasR[i].Nombre = prompt('Ingresa el nombre: ');
+    personasR[i].Apellido = prompt('Ingresa el apellido: ');
+    personasR[i]['Fecha de Nacimiento'] = prompt('Ingresa la FNacimiento: ');
+    personasR[i]['Numero de Telefono'] = prompt('Ingresa el NTelefono: ');
+    personasR[i]['Correo Electronico'] = prompt('Ingresa el Correo: ');
+    validarMenu();
+}
+//-------------------------------------------------------------------------------------
+//----------------------------EliminarPer-------------------------------------------------
+let eliminarPer = function() {
+    n = prompt('Ingresa el nombre a eliminar: ');
+    a = prompt('Ingresa el apellido a eliminar: ');
+    for (let i = 0; i < personasR.length; i++) {
+        if (personasR[i].Nombre == n && personasR[i].Apellido == a) deleteP(i);
+        else { console.log('No se encontro esa persona'); } 
+    }
+}
+
+let deleteP = function(i) {
+    index = personasR.indexOf(personasR[i]);
+    personasR = personasR.slice(0, index).concat(personasR.slice(index+1));
+    validarMenu();  
+}
+//-------------------------------------------------------------------------------------
+//----------------------------EliminarPer-------------------------------------------------
+let mostrarTodo = function() {
+    console.log(personasR);
+    validarMenu();
 }
 //-------------------------------------------------------------------------------------
 let E12 = function(op) {
@@ -50,15 +96,19 @@ let E12 = function(op) {
             ingresarP();
         break;
         case 2:
-
+            buscar();
         break;
         case 3:
+            modificar();
         break;
         case 4:
+        eliminarPer();
         break;
         case 5:
+        mostrarTodo();
         break;
         case 6:
+        return '';
         break;
         default:
         validarMenu();
@@ -67,3 +117,5 @@ let E12 = function(op) {
 
 //MAIN
 personasR = [];
+
+validarMenu();
